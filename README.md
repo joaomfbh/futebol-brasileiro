@@ -20,7 +20,7 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 |Ceará |(in queue)|
 |Chapecoense |(in queue)|
 |Corinthians |(in queue)|
-|Cruzeiro (ok)|
+|Cruzeiro |(ok)|
 |Csa |(in queue)|
 |Flamengo |(in queue)|
 |Fluminense |(in queue)|
