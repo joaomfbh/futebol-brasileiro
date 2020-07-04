@@ -44,5 +44,7 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 |Vasco da Gama |(in queue)|
 
 ok = Dados obtidos
+
 in queue = Na fila para coleta de dados
+
 in progress = Em andamento
