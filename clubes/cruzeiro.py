@@ -1,16 +1,10 @@
 import pandas as pd
-import requests
-from bs4 import BeautifulSoup
+from functions import webpage_requests
 
 def cruzeiro_gather():
     try:
         # Url from Cruzeiro conquests page
-        url = 'https://www.cruzeiro.com.br/conquistas'
-        response = requests.get(url)
-        page = response.content
-
-        # Pass the page to Beautiful soup method to start page scraping
-        soup = BeautifulSoup(page, 'lxml')
+        soup = webpage_requests('https://www.cruzeiro.com.br/conquistas')
 
         # Create empty lists to get data
         nome_titulos = []
@@ -56,4 +50,3 @@ def cruzeiro_gather():
             raise Exception("The name of conquests don't match with the years of conquests. Code update required!")
     except Exception as e:
             print(e)
-
