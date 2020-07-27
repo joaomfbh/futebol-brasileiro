@@ -1,10 +1,10 @@
 import pandas as pd
-from functions import webpage_requests
+import functions
 
 def cruzeiro_gather():
     try:
         # Url from Cruzeiro conquests page
-        soup = webpage_requests('https://www.cruzeiro.com.br/conquistas')
+        soup = functions.webpage_requests('https://www.cruzeiro.com.br/conquistas')
 
         # Create empty lists to get data
         nome_titulos = []
@@ -45,8 +45,13 @@ def cruzeiro_gather():
             df['ano_conquista'] = anos_titulos
             df['ano_conquista'] = df['ano_conquista'].astype(int)
 
+            functions.save_to_csv(df, 'cruzeiro')
+
             return df
         else:
             raise Exception("The name of conquests don't match with the years of conquests. Code update required!")
     except Exception as e:
             print(e)
+
+
+cruzeiro_gather()
