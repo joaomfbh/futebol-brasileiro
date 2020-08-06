@@ -4,12 +4,13 @@ import pandas as pd
 import os
 
 def webpage_requests (url_site):
-    content_ret = [0,0]
+    content_r = [0,0]
     response = requests.get(url_site)
-    content_ret[0] = len(response.content)
-    content_ret[1] = BeautifulSoup(response.content, 'lxml')
+    
+    content_r[0] = len(response.content)
+    content_r[1] = BeautifulSoup(response.content, 'lxml')
 
-    return content_ret
+    return content_r
 
 def remove_math_prefixes(dataframe, column_name):
     math_prefixes = ['bi','Bi','tri','Tri','tetra','Tetra','penta','Penta',
