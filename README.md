@@ -36,8 +36,8 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 |Fluminense |(in queue)|
 |Fortaleza |(in queue)|
 |Goiás |(in queue)|
-|Grêmio |(in queue)|
-|Internacional |(in progress)|
+|Grêmio |(in progress)|
+|Internacional |(ok)|
 |Palmeiras |(in queue)|
 |Santos |(in queue)|
 |São Paulo |(in queue)|
