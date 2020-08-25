@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
+import re
 
 def webpage_requests (url_site):
     content_r = [0,0]
@@ -13,14 +14,11 @@ def webpage_requests (url_site):
     return content_r
 
 def remove_math_prefixes(dataframe, column_name):
-    math_prefixes = ['bi','Bi','tri','Tri','tetra','Tetra','penta','Penta',
-                     'hexa','Hexa','hepta','Hepta','octa','Octa','enea','Enea','deca','Deca']
+    pattern = r"^(bi|tri|tetra|penta|hexa|hepta|octa|enea|deca)"
     
-    for i in math_prefixes:
-        for j in range(dataframe.shape[0]):
-            if i in dataframe[column_name][j]:
-                dataframe.loc[j,column_name] = dataframe.loc[j,column_name].replace(i,'')
-    
+    for i,j in enumerate(dataframe[column_name]):
+        dataframe.loc[i,column_name] = re.sub(pattern, "", j, flags=re.IGNORECASE)
+
     return dataframe[column_name]
 
 def save_to_csv(dataframe, file_name):
