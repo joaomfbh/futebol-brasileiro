@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import os
 import re
+import hashlib
 
-def webpage_requests (url_site):
+def webpage_requests(url_site):
     content_r = [0,0]
     response = requests.get(url_site)
-    
-    content_r[0] = len(response.content)
+
+    content_r[0] = hashlib.md5(requests.get(url_site).text.encode('utf-8')).hexdigest()
     content_r[1] = BeautifulSoup(response.content, 'lxml')
 
     return content_r
