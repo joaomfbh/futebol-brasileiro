@@ -1,4 +1,6 @@
+.gitignore
 .vscode/
 .git/
 __pycache__/
 files/
+offline_pages/*.html
