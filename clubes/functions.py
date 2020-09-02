@@ -18,6 +18,8 @@ def webpage_requests(url_site):
     return content_r
 
 def remove_math_prefixes(dataframe, column_name):
+    dataframe.loc[:,column_name] = dataframe[column_name].apply(lambda x: x.strip())
+
     pattern = r"^(bi|tri|tetra|penta|hexa|hepta|octa|enea|deca)"
     
     for i,j in enumerate(dataframe[column_name]):
