@@ -6,11 +6,14 @@ import re
 import hashlib
 
 def webpage_requests(url_site):
-    content_r = [0,0]
-    response = requests.get(url_site)
 
-    content_r[0] = hashlib.md5(requests.get(url_site).text.encode('utf-8')).hexdigest()
-    content_r[1] = BeautifulSoup(response.content, 'lxml')
+    content_r = [0,0]
+
+    response = requests.get(url_site)
+    website_content = BeautifulSoup(response.content, 'lxml')
+
+    content_r[0] = hashlib.md5(website_content.text.encode('utf-8')).hexdigest()
+    content_r[1] = website_content
 
     return content_r
 
