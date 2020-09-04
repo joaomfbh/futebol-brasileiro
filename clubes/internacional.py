@@ -1,18 +1,26 @@
 import pandas as pd
 import functions
 import re
+import hashlib
+from bs4 import BeautifulSoup
+import zipfile
 
 try:
     def internacional_gather():
+        with zipfile.ZipFile('offline_pages/offline_pages.zip','r') as zip_file:
+            zip_file.extractall(path='offline_pages/')
+            with open('offline_pages/internacional_31082020.html', 'rb') as file:
+                page = file.read()
 
-        with open('offline_pages/internacional_27072020.html', 'rb') as file:
-            pagina = file.read()
-        
+        page_text = BeautifulSoup(page,'lxml').text
+        local_hash = hashlib.md5(page_text.encode('utf-8')).hexdigest()
+
         # Url from Internacional conquests page
-        content = functions.webpage_requests('https://internacional.com.br/historia/titulos')
-        soup = content[1]
+        website_content = functions.webpage_requests('https://internacional.com.br/historia/titulos')
 
-        if len(pagina) == content[0]:
+        if local_hash == website_content[0]:
+            soup = website_content[1]
+
             # Conquests are in a table, tr elements
             lst_conquests = []
 
@@ -102,6 +110,3 @@ try:
 
 except Exception as e:
     print(e)
-
-
-internacional_gather()
