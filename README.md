@@ -28,7 +28,7 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 |Bahia |(in queue)|
 |Botafogo |(in queue)|
 |Ceará |(in queue)|
-|Chapecoense |(in queue)|
+|Chapecoense |(in progress)|
 |Corinthians |(in queue)|
 |Cruzeiro |(ok)|
 |Csa |(in queue)|
@@ -36,7 +36,7 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 |Fluminense |(in queue)|
 |Fortaleza |(in queue)|
 |Goiás |(in queue)|
-|Grêmio |(in progress)|
+|Grêmio |(ok)|
 |Internacional |(ok)|
 |Palmeiras |(in queue)|
 |Santos |(in queue)|
