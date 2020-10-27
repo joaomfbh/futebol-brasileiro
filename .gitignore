@@ -4,3 +4,4 @@
 __pycache__/
 files/
 offline_pages/*.html
+clubes/modelo.py
