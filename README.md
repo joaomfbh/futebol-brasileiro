@@ -22,9 +22,9 @@ Os times e respectivos status da coleta dos dados são listados a seguir:
 
 |Clube|Status|
 |---|---
-|Athletico Paranaense |(in queue)|
+|Athletico Paranaense |(in progress)|
 |Atlético |(in queue)|
-|Avaí |(in progress)|
+|Avaí |(ok)|
 |Bahia |(in queue)|
 |Botafogo |(in queue)|
 |Ceará |(in queue)|
